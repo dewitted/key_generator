@@ -1,0 +1,147 @@
+@import "../../styles/base.scss";
+
+.generator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  .container {
+    display: flex;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 24px;
+    flex-direction: column;
+    @include res(tablet) {
+      flex-direction: row;
+    }
+    .inputContainer {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      @include res(tablet) {
+        max-width: 507px;
+        width: 75%;
+      }
+      input {
+        height: 40px;
+        width: 100%;
+        background-color: $white;
+        border: 0;
+        font-weight: 700;
+        color: $mine-shaft;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 8px;
+        @include res(tablet) {
+          height: 50px;
+          font-size: 20px;
+          line-height: 23px;
+          padding: 14px 24px;
+        }
+      }
+      .generate {
+        position: absolute;
+        right: 10px;
+        height: 20px;
+        width: 20px;
+        background-image: url("../../public/generator/arrow.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        transition: transform 0.75s ease;
+        &:hover {
+          transform: rotate(360deg);
+        }
+        @include res(tablet) {
+          right: 26px;
+          height: 24px;
+          width: 24px;
+        }
+      }
+    }
+    .copy {
+      position: relative;
+      flex-grow: 1;
+      background-color: $green-haze;
+      border: 0;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 16px;
+      padding: 8px;
+      transition: background-color 0.25s ease-in-out;
+      &:hover {
+        background-color: $malachite;
+      }
+      @include res(tablet) {
+        font-size: 16px;
+        line-height: 28px;
+      }
+      .hidden {
+        display: none;
+        @include res(tablet) {
+          display: inline;
+          font-size: 16px;
+          line-height: 28px;
+        }
+      }
+      .success {
+        font-size: 12px;
+        position: absolute;
+        top: calc(100% + 7px);
+        left: 0;
+        user-select: none;
+        cursor: default;
+        @include res(tablet) {
+        font-size: 12px;
+          line-height: 12px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+  .options {
+    width: 100%;
+    max-width: 463px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include res(tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
+    .option {
+      display: flex;
+      align-items: center;
+      input {
+        margin-right: 9px;
+        &:first-child {
+          margin-left: 9px;
+        }
+        @include res(tablet) {
+          margin-left: 0px;
+        }
+      }
+      label {
+        font-weight: 400;
+        position: relative;
+        top: 1px;
+        line-height: 22px;
+        font-size: 14px;
+        @include res(tablet) {
+          font-size: 12px;
+        }
+      }
+      &.reverse {
+        flex-direction: row-reverse;
+        @include res(tablet) {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}

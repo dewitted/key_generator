@@ -1,0 +1,21 @@
+@import "../../styles/base.scss";
+
+.header {
+    height: 70px;
+    width: 100%;
+    background-color: $bg-color-main-invert;
+    .container {
+        @include container;
+        display: flex;
+        align-items: center;
+        .imageContainer {
+            position: relative;
+            left: 10px;
+            height: 29px;
+            .image {
+                width: unset;
+                height: 100%;
+            }
+        }
+    }
+}
